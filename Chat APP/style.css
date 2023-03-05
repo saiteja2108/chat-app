@@ -1,0 +1,157 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200vh;
+}
+.wrapper{
+    background: grey;
+    width: 360px;
+    height: 400px;
+    padding: 9px; 
+    border-radius: 13px;
+    box-shadow: 0 0 120px 0 rgba(0,0,0,0.1),
+    0 32px 64px -48px rgba(0,0,0,0.5);
+    position: absolute;
+
+}
+.form{
+    padding: 15px 30px;
+}
+.form header{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 7px;
+    border-bottom: 2px solid coral;
+}
+.input-fields {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.input-fields input{
+    height: 30px;
+    width: 100%;
+    font-size: 14px;
+    padding: 0 10px;
+    border: 1px solid coral;
+    outline: none;
+    border-radius: 7px;
+    
+}
+.submit{
+    align-items: center;
+    padding: 15px;
+    
+}
+.button {
+    background: coral;
+    border: 1px solid coral;
+    height: 39px;
+    width: 140px;
+    margin-left: 47px;
+    border-radius: 19px;
+    transition-duration: 0.4s;
+}
+.button:hover{
+    background: white;
+    cursor: pointer;
+}
+.link{
+    margin-left: 78px;
+}
+.Name {
+    padding-bottom: 15px;
+}
+.E-mail{
+    padding-bottom: 15px;
+}
+.password{
+    padding-bottom: 15px;
+}
+
+
+/* login page */
+
+.material-symbols-outlined{
+    margin-left:255px;
+    margin-bottom: 33px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* home page*/
+.user-chat{
+    background: grey;
+    width: 360px;
+    height: 400px;
+    padding: 9px; 
+    border-radius: 13px;
+    box-shadow: 0 0 120px 0 rgba(0,0,0,0.1),
+    0 32px 64px -48px rgba(0,0,0,0.5);
+    position: absolute;
+}
+
+.users{
+    padding: 25px 30px;
+}
+.users header{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+
+}
+.user-chat img{
+    object-fit: cover;
+    border-radius: 50%;
+}
+.users header .content, .users-list{
+    display: flex;
+}
+.users header .content img{
+    height: 50px;
+    width: 50px;
+}
+.users header .details{
+    margin-left: 15px;
+}
+.users header .details span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.users header .logout{
+    color: whitesmoke;
+    font-size: 17px;
+    padding: 7px 15px;
+    background: black;
+    border-radius: 7px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.users .search input{
+    position: absolute;
+    height: 42px;
+    width: 100%;
+    border-radius: 9px;
+    border-color: whitesmoke;
+    border: 1px solid white;
+    font-size: 17px;
+    outline: none;
+}
