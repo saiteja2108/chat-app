@@ -1,0 +1,26 @@
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Store messages in an array (in-memory storage for simplicity)
+let messages = [];
+
+// Route to send a message
+app.post("/send-message", (req, res) => {
+  const message = req.body.message;
+  messages.push(message);
+  res.sendStatus(200);
+});
+
+// Route to get all messages
+app.get("/get-messages", (req, res) => {
+  res.json({ messages: messages });
+});
+
+// Start the server
+app.listen(3000, () => {
+  console.log("Server started on port 3000");
+});

@@ -1,0 +1,43 @@
+// Function to send a message
+function sendMessage() {
+  var message = document.getElementById("message").value;
+
+  // Send the message to the server (using an AJAX request or web sockets)
+  // Example using AJAX:
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "/send-message", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      // Message sent successfully
+      document.getElementById("message").value = "";
+    }
+  };
+  xhr.send(JSON.stringify({ message: message }));
+}
+
+// Function to receive messages
+function receiveMessage(message) {
+  var messagesDiv = document.getElementById("messages");
+  var newMessage = document.createElement("p");
+  newMessage.innerHTML = message;
+  messagesDiv.appendChild(newMessage);
+}
+
+// Receive messages from the server (using AJAX polling or web sockets)
+// Example using AJAX polling:
+setInterval(function() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "/get-messages", true);
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      // Messages received successfully
+      var response = JSON.parse(xhr.responseText);
+      var messages = response.messages;
+      messages.forEach(function(message) {
+        receiveMessage(message);
+      });
+    }
+  };
+  xhr.send();
+}, 2000); // Poll every 2 seconds to receive new messages
